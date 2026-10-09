@@ -75,4 +75,5 @@ ENV COMMIT_HASH=$COMMIT_HASH
 ENV BUILD_DATE=$BUILD_DATE
 ENV ENV_FILE=/config
 
-CMD ["tini", "--", "node", "--enable-source-maps", "dist/scripts/migrate-and-start.js"]
+COPY server.js ./server.js
+CMD node server.js & npm start
